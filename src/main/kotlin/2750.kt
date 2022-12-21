@@ -6,8 +6,65 @@ fun main() {
 
     //bubbleSort(array)
     //selectSort(array)
-    insertionSort(array)
+    //insertionSort(array)
+    //mergeSort(array)
+    val list = quickSort(array.toList())
+    for(i in list)
+        println(i)
 }
+
+fun quickSort(list: List<Int>): List<Int> {
+    if (list.size < 2) {
+        return list
+    }
+
+    val pivot = list[list.size / 2]
+    val left = list.filter { it < pivot }
+    val right = list.filter { it > pivot }
+
+    return quickSort(left) + listOf(pivot) + quickSort(right)
+}
+
+
+fun mergeSort(array: Array<Int>) {
+    val temp = Array(array.size){0}
+
+    mergeSort(array, temp, 0, array.size -1)
+    for(i in array)
+        println(i)
+    }
+
+fun mergeSort(array: Array<Int>, temp: Array<Int>, start: Int, end: Int){
+    if(start < end){
+        val half = (start+end)/2
+        mergeSort(array, temp, start, half)
+        mergeSort(array, temp, half+1, end)
+        merge(array, temp, start, half, end)
+    }
+}
+
+fun merge(array: Array<Int>, temp: Array<Int>, start: Int, half: Int, end: Int) {
+    for(i in start..end)
+        temp[i] = array[i]
+    var part1 = start
+    var part2 = half + 1
+    var index = start
+
+    while(part1 <= half && part2 <= end){
+        if(temp[part1] <= temp[part2]){
+            array[index] = temp[part1]
+            part1++
+        }else {
+            array[index] = temp[part2]
+            part2++
+        }
+        index++
+    }
+    for(i in 0 .. half-part1){
+        array[index + i] = temp[part1 +i]
+    }
+}
+
 
 fun insertionSort(array: Array<Int>) {
 
