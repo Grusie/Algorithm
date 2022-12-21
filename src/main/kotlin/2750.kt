@@ -4,13 +4,16 @@ fun main() {
     for(i in 0 until input)
         array[i] = readLine()!!.toInt()
 
+    array.sort()
+    for(i in array)
+        println(i)
     //bubbleSort(array)
     //selectSort(array)
     //insertionSort(array)
     //mergeSort(array)
-    val list = quickSort(array.toList())
+    /*val list = quickSort(array.toList())
     for(i in list)
-        println(i)
+        println(i)*/
 }
 
 fun quickSort(list: List<Int>): List<Int> {
@@ -26,7 +29,7 @@ fun quickSort(list: List<Int>): List<Int> {
 }
 
 
-fun mergeSort(array: Array<Int>) {
+private fun mergeSort(array: Array<Int>) {
     val temp = Array(array.size){0}
 
     mergeSort(array, temp, 0, array.size -1)
@@ -34,7 +37,7 @@ fun mergeSort(array: Array<Int>) {
         println(i)
     }
 
-fun mergeSort(array: Array<Int>, temp: Array<Int>, start: Int, end: Int){
+private fun mergeSort(array: Array<Int>, temp: Array<Int>, start: Int, end: Int){
     if(start < end){
         val half = (start+end)/2
         mergeSort(array, temp, start, half)
@@ -43,7 +46,7 @@ fun mergeSort(array: Array<Int>, temp: Array<Int>, start: Int, end: Int){
     }
 }
 
-fun merge(array: Array<Int>, temp: Array<Int>, start: Int, half: Int, end: Int) {
+private fun merge(array: Array<Int>, temp: Array<Int>, start: Int, half: Int, end: Int) {
     for(i in start..end)
         temp[i] = array[i]
     var part1 = start
