@@ -23,7 +23,7 @@
 
 - 선택된 값과 나머지 데이터 중에 비교하여 알맞은 자리를 찾는 알고리즘
     
-    ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/77d22c60-26f7-4f1e-a3a3-b7d95002689b/img.gif)
+    ![img](https://user-images.githubusercontent.com/75468060/209472794-e5d9370e-d605-4309-94b3-cbf7541e7ecf.gif)
     
 - 시간 복잡도 O(n²)
 
@@ -32,7 +32,7 @@
 - 데이터 집합을 순회하면서 정렬이 필요한 요소를 뽑아내어 이를 다시 적당한 곳으로 삽입하는 고리즘
 - 성능은 버블정렬보다 좋음
     
-    ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7465ae8e-0045-4c5f-bfbf-f58b1465128b/img.gif)
+    ![img (1)](https://user-images.githubusercontent.com/75468060/209472804-0203102e-4307-44e5-9162-6027291cf2db.gif)
     
 - 시간 복잡도 O(n²) 이미 정렬 되어있다면 best O(n)
 
@@ -40,7 +40,7 @@
 
 - 거품이 수면으로 올라오는 듯 하여 붙여진 버블정렬, 인접한 두 수를 비교하여 오름차순 or 내림차순
     
-    ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54bc105a-d96e-42a4-b603-5680ea8ae811/img.gif)
+    ![img (2)](https://user-images.githubusercontent.com/75468060/209472799-6d8d3866-5aae-4056-a43c-9ea5dfddba4d.gif)
     
 - 시간복잡도 O(n²)
 
@@ -48,7 +48,7 @@
 
 - 둘 이상의 부분집합으로 가르고, 각 부분집합을 정렬한 다음 부분집합들을 다시 정렬된 형태로 합치는 방식
     
-    ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f09cfe27-eef2-4406-9f3d-3fa786ba2e28/img.gif)
+    ![img (3)](https://user-images.githubusercontent.com/75468060/209472800-9231386b-ee2a-41a6-b976-0dea7219f88e.gif)
     
 - 데이터 집합이 메모리에 한번에 올리기에 너무 클 때 쓰기 좋은 방법이다.
 - 시간 복잡도 O(n log n)
@@ -59,7 +59,7 @@
 - 트리 기반으로 최대 힙 트리 or 최소 힙 트리를 구성해 정렬을 하는 방법
 - 내림차순 정렬에서는 최대 힙, 오름차순 정렬을 위해서는 최소 힙을 구성하면 된다.
     
-    ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0ca59c2b-025a-46f8-b9f2-ac79b607851c/img.gif)
+    ![img (4)](https://user-images.githubusercontent.com/75468060/209472801-f6ab3c85-74d4-47d7-a809-48d028eb1bfc.gif)
     
 - 완전이진트리여야 함
 - 시간복잡도 O(n log n)
@@ -72,7 +72,7 @@
 - 한쪽 부분에는 피벗값보다 작은 값들만, 다른 한쪽은 큰 값들만 넣는다.
 - 더 이상 쪼갤 부분 집합이 없을 때까지 각각의 부분 집합에 대해 피벗/ 쪼개기 재귀적으로 적용.
     
-    ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5a884fe5-ab61-4fd4-add0-ae0a14b079e7/img.gif)
+    ![img (5)](https://user-images.githubusercontent.com/75468060/209472802-6728753b-451d-477e-9471-4792483efff5.gif)
     
 - 시간 복잡도 O(n log n)
 
@@ -81,7 +81,7 @@
 - 낮은 자리수부터 비교해가며 정렬한다. 비교연산을 하지 않아 빠르지만, 또 다른 메모리 공간을 필요하다는 게 단점. 기수정렬은 낮은 자리수부터 비교하여 정렬해 간다는 것을 기본 개념으로 하는 정렬 알고리즘이다.
 - 비교 연산을 하지 않아 빠르지만, 데이터 전체 크기에 기수 테이블의 크기만한 메모리가 더 필요하다.
     
-    ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d2c8a38c-05eb-47aa-9305-352bcbba3d96/img.gif)
+    ![img (6)](https://user-images.githubusercontent.com/75468060/209472803-e755e397-d803-4919-8d2d-d927f8e4c000.gif)
     
 - 시간 복잡도 O(dn) → d는 자리수
 </div>
