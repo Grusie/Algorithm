@@ -5,7 +5,7 @@
 
 ---
 
-1. 수 찾기
+1920. 수 찾기
 
 2750. 수 정렬하기
 
@@ -84,5 +84,40 @@
     ![img (6)](https://user-images.githubusercontent.com/75468060/209472803-e755e397-d803-4919-8d2d-d927f8e4c000.gif)
     
 - 시간 복잡도 O(dn) → d는 자리수
+</div>
+</details>
+
+<details>
+<summary>22.12.21(정렬, 입출력)</summary>
+<div markdown="1">
+
+# 22.12.21(정렬, 입출력)
+
+---
+
+2751. 수 정렬하기2
+10989. 수 정렬하기3
+
+> 출력으로는 StringBuilder를 사용하는 것이 성능면에서 더 좋다.
+입력면에서도 BufferedReader를 사용해보자.
+> 
+
+> Collections.sort()는 Object type arrays에 대해 Merge Sort보다 향상된 Tim Sort를 수행한다.
+Tim sort란 합병정렬의 최악의 경우와 삽입정렬의 최선의 경우를 합친 알고리즘으로 시간복잡도는 O(n) ~ O(nlogn) 을 보장함.
+> 
+
+Collections.sort()는 일반적인 배열로 사용할 수 없고 리스트를 이용해야 한다.
+
+2751은 어찌저치 클리어
+
+10989는 브론즈 문제인데, 시간과 메모리가 중요한 문제인 듯 함
+
+- BufferedReader를 사용하지 않고, Scanner를 사용할 경우 시간초과
+- BufferedReader를 사용하더라도, 메모리 초과
+
+→ BuffereReader와 BufferedWriter를 사용할 것
+
+BufferedWriter 의 경우 버퍼를 잡아 놓았기 때문에 반드시 flush() / close() 를 반드시 호출해 주어 뒤처리를 해주어야합니다.
+
 </div>
 </details>
