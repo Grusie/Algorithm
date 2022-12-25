@@ -1,6 +1,7 @@
 <details>
 <summary>22.12.19(이진 탐색, 정렬)</summary>
 <div markdown="1">
+    
 # 22.12.19(이진 탐색,정렬)
 
 ---
@@ -118,6 +119,152 @@ Collections.sort()는 일반적인 배열로 사용할 수 없고 리스트를 �
 → BuffereReader와 BufferedWriter를 사용할 것
 
 BufferedWriter 의 경우 버퍼를 잡아 놓았기 때문에 반드시 flush() / close() 를 반드시 호출해 주어 뒤처리를 해주어야합니다.
+
+</div>
+</details>
+
+<details>
+<summary>22.12.23(스택, 큐 등)</summary>
+<div markdown="1">
+
+# 22.12.23(스택, 큐 등)
+
+---
+
+10815. 숫자 카드
+
+10828. 스택
+
+10845. 큐
+
+10866. 덱
+
+1. 숫자 카드
+- BufferedReader, Writer를 사용
+- 덱을 받아서 찾아야 하기에, 덱을 받는 과정에서 split을 사용하기에, 덱 크기 값들은 읽자마자 버려준다.
+- 받은 덱을 sort해서 이분 탐색이 가능하게 만들어둔 뒤
+- bynarySearch 메소드를 사용하여 출력 시켜 준다.
+- flush()는 버퍼에 남아있는 것들을 출력해주기 위함
+
+→ split을 사용하는 것보다 StringTokenizer를 사용하는 것이 빠르다고 한다.
+
+→ print(bw)는 필요없음, 아마 StringBuilder일 때는 필요해서 헷갈린 듯
+
+1. 스택
+
+과거에 풀었던 스택문제, 시간과 메모리를 줄이기 위해 노력했다.
+
+- BufferedRead, Writer 사용
+- split 대신 StringTokenizer사용
+- when문 사용 할 때 pop, top에서 뜨는 에러부분을 try-catch로 한 번에 묶어서 처리
+
+1. 큐
+
+과거에 시간초과로 풀지 못했던 큐문제
+
+- queue 구현 방법은 LinkedList를 사용
+- 나머지는 Stack과 동일
+
+1. 덱
+- ArrayDeque를 사용함
+- split 대신 StringTokenizer사용
+- when문 사용 할 때 pop, front, back에서 뜨는 에러부분을 try-catch로 한 번에 묶어서 처리
+
+1406번. 에디터
+
+- 문자열 자르기로 접근 → 시간초과
+
+```kotlin
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+import java.util.StringTokenizer
+
+fun main() {
+    val br = BufferedReader(InputStreamReader(System.`in`))
+    val bw = BufferedWriter(OutputStreamWriter(System.out))
+    var st : StringTokenizer
+    var result = br.readLine()
+    var cursor = result.length
+
+    for( i in 0 until br.readLine().toInt()) {
+        st = StringTokenizer(br.readLine())
+        try {
+            when (st.nextToken()) {
+                "P" -> {
+                    result = result.slice(IntRange(0, cursor-1)) + st.nextToken() + result.slice(IntRange(cursor, result.length - 1))
+                    cursor++
+                }
+                "D" -> if(cursor <= result.length-1) cursor++
+                "L" -> if(cursor > 0) cursor--
+                "B" -> {
+                    if(cursor>0) {
+                        result = result.removeRange(cursor-1, cursor)
+                        cursor--
+                    }
+                }
+            }
+        } catch (e: java.lang.Exception) {
+        }
+    }
+    bw.write(result)
+    br.close()
+    bw.flush()
+    bw.close()
+}
+```
+
+- LinkedList로 접근 → 시간초과
+
+```kotlin
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+import java.util.LinkedList
+import java.util.StringTokenizer
+
+fun main() {
+    val br = BufferedReader(InputStreamReader(System.`in`))
+    val bw = BufferedWriter(OutputStreamWriter(System.out))
+    var st : StringTokenizer
+    var result = LinkedList<Char>()
+    result.addAll(br.readLine().map{it})
+    var cursor = result.size
+
+    for( i in 0 until br.readLine().toInt()) {
+        st = StringTokenizer(br.readLine())
+        try {
+            when (st.nextToken()) {
+                "P" -> {
+                    result.add(cursor, st.nextToken().toCharArray()[0])
+                    cursor++
+                }
+                "D" -> if(cursor <= result.size - 1) cursor++
+                "L" -> if(cursor > 0) cursor--
+                "B" -> {
+                    if(cursor>0) {
+                        result.removeAt(cursor-1)
+                        cursor--
+                    }
+                }
+            }
+        } catch (e: java.lang.Exception) {
+        }
+    }
+    bw.write(result.toCharArray())
+    br.close()
+    bw.flush()
+    bw.close()
+}
+```
+
+⇒ cursor를 따로 만들어서 사용하면서 시간이 지연된 것 같음
+
+알고리즘 분류를 확인 해 본 겨로가 자료 구조의 스택을 사용한다고 되어있음. 이런 걸 알아채는 것이 중요함
+
+- 스택
 
 </div>
 </details>
