@@ -84,6 +84,5 @@
     ![img.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d2c8a38c-05eb-47aa-9305-352bcbba3d96/img.gif)
     
 - 시간 복잡도 O(dn) → d는 자리수
-
 </div>
 </details>
