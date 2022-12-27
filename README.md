@@ -297,7 +297,7 @@ fun main() {
 </details>
 
 <details>
-<summary>22.12.26정렬, count 시간복잡도</summary>
+<summary>22.12.26(정렬, count 시간복잡도)</summary>
 <div markdown="1">
 
 # 22.12.26
