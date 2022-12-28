@@ -16,17 +16,29 @@ fun main() {
         var size = st.nextToken().toInt()
         var index = st.nextToken().toInt()
         st = StringTokenizer(br.readLine())
+
         for(j in 0 until size) {
             queue.offer(st.nextToken().toInt())
         }
         var count = 0
-        while(index != 0 && queue.peek() != queue.maxOrNull()){
-            queue.add(queue.poll())
-            index--
-            if(index<0)
-                index = queue.size-1
-            count++
+
+        while(true){
+            if(queue.peek() == queue.maxOrNull()) {
+                queue.poll()
+                count++
+                if(index == 0)
+                    break
+            }
+            else {
+                queue.add(queue.poll())
+            }
+                index--
+                if (index < 0)
+                    index = queue.size - 1
         }
+        if(count == 0)
+            count++
+
         bw.write("$count\n")
 
     }
