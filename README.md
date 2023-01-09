@@ -504,6 +504,7 @@ a>3이어야 하기에, a[1],a[2],a[3]을 지정 해두고 시작하였다.
 <details>
 <summary>23.01.09</summary>
 <div markdown="1">
+    
 # 23.01.09
 
 ---
