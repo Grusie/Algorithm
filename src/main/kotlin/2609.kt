@@ -2,8 +2,7 @@ import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
-import java.util.*
-import kotlin.collections.ArrayList
+import java.util.StringTokenizer
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
@@ -13,27 +12,22 @@ fun main() {
     val num1 = st.nextToken().toInt()
     val num2 = st.nextToken().toInt()
 
-    val array = Array(10001){false}
-    val publicArray = ArrayList<Int>()
+    val max = gcd(num1,num2)
 
-    fun addArray(num : Int){
-        for (i in 2.. num) {
-            if (num % i == 0) {
-                if(!array[i])
-                    array[i] = true
-                else
-                    publicArray.add(i)
-            }
-        }
-    }
-    addArray(num1)
-    addArray(num2)
+    bw.write("$max\n")
+    bw.write("${num1*num2/max}")
 
-    val min = Collections.max(publicArray)
-    bw.write("$min\n")
-
-    bw.write("${num1*num2/min}")
     br.close()
     bw.flush()
     bw.close()
+}
+fun gcd(a: Int, b: Int):Int{
+    var a1 = a
+    var b1 = b
+    while(b1 != 0) {
+        var r = a1 % b1
+        a1 = b1
+        b1 = r
+    }
+    return a1
 }
