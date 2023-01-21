@@ -558,7 +558,7 @@ a>3이어야 하기에, a[1],a[2],a[3]을 지정 해두고 시작하였다.
 - 리벤지
 - 찾아보니, 유클리드 호제법이라는 게 있다더라
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/718f57d9-bf9b-422c-9d93-bbbc035c440f/Untitled.png)
+![image](https://user-images.githubusercontent.com/75468060/213846083-1a5ae9cd-d618-4347-b382-7ed0e31f6158.png)
 
 - 최소공배수는 양수를 곱하고 최대공약수로 나누면 가능
 </div>
