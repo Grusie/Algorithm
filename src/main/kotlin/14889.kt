@@ -40,7 +40,7 @@ fun main() {
 
         for(i in start until order){
             visit[i] = true
-            dfs(i+1, depth+1)
+            dfs(start+1, depth+1)
             visit[i] = false
         }
     }
